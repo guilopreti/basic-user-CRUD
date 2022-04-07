@@ -20,7 +20,9 @@ const verifyTokenAndUserIdMiddleware = (request, response, next) => {
   if (!matchUserToken.isAdm) {
     const matchUserParam = users.find((user) => user.uuid === uuid);
     if (matchUserParam !== matchUserToken) {
-      return response.status(401).json({ erro: "Token Inválido" });
+      return response
+        .status(401)
+        .json({ erro: "Necessário Permissão de Administrador" });
     }
   }
 

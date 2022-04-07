@@ -1,20 +1,25 @@
 import users from "../database";
 import * as bcrypt from "bcryptjs";
 
-const updateUserService = async (name = "", email = "", password = "", id) => {
+const updateUserService = async (
+  newName = "",
+  newEmail = "",
+  newPassword = "",
+  id
+) => {
   let updatedInfos = {
     updatedOn: new Date(),
   };
 
-  if (name) {
-    updatedInfos = { ...updatedInfos, name };
+  if (newName) {
+    updatedInfos = { ...updatedInfos, name: newName };
   }
-  if (email) {
-    updatedInfos = { ...updatedInfos, email };
+  if (newEmail) {
+    updatedInfos = { ...updatedInfos, email: newEmail };
   }
-  if (password) {
-    const newPassword = await bcrypt.hash(password, 10);
-    updatedInfos = { ...updatedInfos, password: newPassword };
+  if (newPassword) {
+    const newPasswordHashed = await bcrypt.hash(newPassword, 10);
+    updatedInfos = { ...updatedInfos, password: newPasswordHashed };
   }
 
   const actualUserIndex = users.findIndex(({ uuid }) => uuid === id);
@@ -25,7 +30,10 @@ const updateUserService = async (name = "", email = "", password = "", id) => {
 
   users[actualUserIndex] = { ...users[actualUserIndex], ...updatedInfos };
 
-  return users[actualUserIndex];
+  const { name, email, uuid, isAdm, createdOn, updatedOn } =
+    users[actualUserIndex];
+
+  return { name, email, uuid, isAdm, createdOn, updatedOn };
 };
 
 export default updateUserService;
