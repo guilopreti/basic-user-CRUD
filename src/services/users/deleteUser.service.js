@@ -1,10 +1,10 @@
-import users from "../database";
+import users from "../../database";
 
 const deleteUserService = (id) => {
   const userIndex = users.findIndex(({ uuid }) => uuid === id);
 
   if (userIndex === -1) {
-    return "Usuário não encontrado";
+    throw new Error("Usuário não encontrado");
   }
 
   users.splice(userIndex, 1);

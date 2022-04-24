@@ -17,13 +17,23 @@ const verifyTokenAdmMiddleware = (request, response, next) => {
       return response.status(401).json({ erro: "Token Inválido" });
     }
 
-    const actualUser = users.find((user) => user.email === decoded.email);
+    const actualUser = users.find((user) => user.uuid === decoded.sub);
+
+    if (!actualUser) {
+      return response.status(401).json({ erro: "Token Inválido" });
+    }
 
     if (!actualUser.isAdm) {
       return response
         .status(401)
         .json({ erro: "Apenas administradores podem acessar essa rota." });
     }
+
+    // const { sub } = decoded;
+
+    // request.user = {
+    //   id: sub,
+    // };
 
     next();
   });

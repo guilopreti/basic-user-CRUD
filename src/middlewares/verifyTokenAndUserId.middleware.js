@@ -16,6 +16,10 @@ const verifyTokenAndUserIdMiddleware = (request, response, next) => {
   const tokenInfos = jwt.decode(token);
 
   const matchUserToken = users.find((user) => user.uuid === tokenInfos.id);
+  // const matchUserToken = users.find((user) => user.uuid === tokenInfos.sub);
+  if (!matchUserToken) {
+    return response.status(401).json({ erro: "Token Inválido" });
+  }
 
   if (!matchUserToken.isAdm) {
     const matchUserParam = users.find((user) => user.uuid === uuid);
@@ -30,6 +34,12 @@ const verifyTokenAndUserIdMiddleware = (request, response, next) => {
     if (error) {
       return response.status(401).json({ erro: "Token Inválido" });
     }
+
+    // const { sub } = decoded;
+
+    // request.user = {
+    //   id: sub,
+    // };
 
     next();
   });

@@ -16,6 +16,12 @@ const verifyTokenMiddleware = (request, response, next) => {
       return response.status(401).json({ erro: "Token Inválido" });
     }
 
+    // const { sub } = decoded;
+
+    // request.user = {
+    //   id: sub,
+    // };
+
     next();
   });
 };

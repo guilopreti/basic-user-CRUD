@@ -1,4 +1,4 @@
-import users from "../database";
+import users from "../../database";
 import * as bcrypt from "bcryptjs";
 
 const updateUserService = async (
@@ -25,7 +25,7 @@ const updateUserService = async (
   const actualUserIndex = users.findIndex(({ uuid }) => uuid === id);
 
   if (actualUserIndex === -1) {
-    return "Usuário não encontrado";
+    throw new Error("Usuário não encontrado");
   }
 
   users[actualUserIndex] = { ...users[actualUserIndex], ...updatedInfos };
