@@ -1,5 +1,6 @@
 {
   "name": "m4-entrega-sprint1-guilopreti",
+  "type": "module",
   "version": "1.0.0",
   "main": "app.js",
   "repository": "git@github.com:Kenzie-Academy-Brasil-Developers/m4-entrega-sprint1-guilopreti.git",
