@@ -1,4 +1,4 @@
-import loginUserService from "../services/login/loginUser.service.js";
+import loginUserService from "../services/login/loginUser.service";
 
 class LoginController {
   store(request, response) {

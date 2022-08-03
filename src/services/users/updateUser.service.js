@@ -1,4 +1,4 @@
-import users from "../../database/index.js";
+import users from "../../database";
 import * as bcrypt from "bcryptjs";
 
 const updateUserService = async (

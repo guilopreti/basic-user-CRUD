@@ -1,4 +1,4 @@
-import users from "../../database/index.js";
+import users from "../../database";
 import jwt from "jsonwebtoken";
 import * as bcrypt from "bcryptjs";
 

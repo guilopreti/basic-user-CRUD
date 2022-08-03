@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
-import createUserService from "../services/users/createUser.service.js";
-import listUsersService from "../services/users/listUsers.service.js";
-import listProfileService from "../services/users/listProfile.service.js";
-import updateUserService from "../services/users/updateUser.service.js";
-import deleteUserService from "../services/users/deleteUser.service.js";
+import createUserService from "../services/users/createUser.service";
+import listUsersService from "../services/users/listUsers.service";
+import listProfileService from "../services/users/listProfile.service";
+import updateUserService from "../services/users/updateUser.service";
+import deleteUserService from "../services/users/deleteUser.service";
 
 class UsersController {
   /* criar */
