@@ -2,6 +2,8 @@
 
 Nesta entrega foi desenvolvido um CRUD de usuário, criando algumas regras de acesso apenas para usuários administradores.
 
+Deploy da API: https://basic-users-crud.herokuapp.com/
+
 ## Endpoints do serviço:
 POST	/users	Criação de usuários
 
