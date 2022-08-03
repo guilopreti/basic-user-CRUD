@@ -1,12 +1,12 @@
 import { Router } from "express";
 
-import UsersController from "../controllers/users.controller";
+import UsersController from "../controllers/users.controller.js";
 
-import verifyDataTypeMiddleware from "../middlewares/verifyDataType.middleware";
-import verifyEmailMiddleware from "../middlewares/verifyEmail.middleware";
-import verifyTokenMiddleware from "../middlewares/verifyToken.middleware";
-import verifyTokenAdmMiddleware from "../middlewares/verifyTokenAdm.middleware";
-import verifyTokenAndUserIdMiddleware from "../middlewares/verifyTokenAndUserId.middleware";
+import verifyDataTypeMiddleware from "../middlewares/verifyDataType.middleware.js";
+import verifyEmailMiddleware from "../middlewares/verifyEmail.middleware.js";
+import verifyTokenMiddleware from "../middlewares/verifyToken.middleware.js";
+import verifyTokenAdmMiddleware from "../middlewares/verifyTokenAdm.middleware.js";
+import verifyTokenAndUserIdMiddleware from "../middlewares/verifyTokenAndUserId.middleware.js";
 
 const usersController = new UsersController();
 
