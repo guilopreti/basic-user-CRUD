@@ -1,4 +1,4 @@
-import users from "../../database";
+import users from "../../database/index.js";
 
 const listUsersService = () => {
   let retornedUsers = users.map(

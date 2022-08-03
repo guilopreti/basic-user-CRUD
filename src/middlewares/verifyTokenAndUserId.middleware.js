@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import users from "../database";
+import users from "../database/index.js";
 
 const verifyTokenAndUserIdMiddleware = (request, response, next) => {
   let token = request.headers.authorization;

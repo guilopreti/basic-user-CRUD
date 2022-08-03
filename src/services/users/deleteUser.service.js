@@ -1,4 +1,4 @@
-import users from "../../database";
+import users from "../../database/index.js";
 
 const deleteUserService = (id) => {
   const userIndex = users.findIndex(({ uuid }) => uuid === id);
