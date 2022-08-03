@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec sucrase-node ./src/app.js",
-    "start": "sucrase-node ./src/app.js"
+    "start": "nodemon --exec sucrase-node ./src/app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
